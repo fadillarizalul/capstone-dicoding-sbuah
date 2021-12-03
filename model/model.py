@@ -68,3 +68,43 @@ validation_generator = train_datagen.flow_from_directory(
         # klasifikasi > 2 kelas maka menggunakan class_mode = 'categorical'
         class_mode='categorical'
         )
+from tensorflow.keras.applications import MobileNetV2
+# get base models
+base_model = MobileNetV2(
+    input_shape=(150,150,3),
+    include_top=False,
+    weights='imagenet',
+    classes=2,
+)
+
+# pre-trained model
+from tensorflow.keras import layers,Sequential
+from tensorflow.keras.models import Model
+
+num_class = 6
+
+#Adding custom layers
+x = base_model.output
+x = layers.GlobalAveragePooling2D()(x)
+x = layers.Dropout(0.2)(x)
+x = layers.Dense(1024, activation="relu")(x)
+predictions = layers.Dense(num_class, activation="softmax")(x)
+model = Model(inputs=base_model.input, outputs=predictions)
+
+# Model Architecture
+from tensorflow.keras.layers import Input
+from tensorflow.keras.applications import ResNet50
+from tensorflow.keras.applications import ResNet152V2
+
+classes = 6
+
+model = tf.keras.models.Sequential([
+    MobileNetV2(include_top=False, weights='imagenet', classes=classes, input_tensor=Input(shape=(150, 150, 3))),
+    tf.keras.layers.GlobalAveragePooling2D(),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(6, activation='sigmoid')
+])
+model.layers[0].trainable = False
+model.summary()
