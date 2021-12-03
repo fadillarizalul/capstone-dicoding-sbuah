@@ -104,7 +104,21 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(1024, activation='relu'),
     tf.keras.layers.Dense(512, activation='relu'),
-    tf.keras.layers.Dense(6, activation='sigmoid')
+    tf.keras.layers.Dense(6, activation='softmax')
 ])
 model.layers[0].trainable = False
 model.summary()
+
+from tensorflow.keras.optimizers import RMSprop
+# compile model dengan 'adam' optimizer loss function 'categorical_crossentropy' 
+model.compile(loss='categorical_crossentropy',
+              optimizer=tf.optimizers.Adam(),
+              metrics=['accuracy'])
+
+#callback
+class myCallback(tf.keras.callbacks.Callback):
+  def on_epoch_end(self, epoch, logs={}):
+    if(logs.get('accuracy')>0.95 and logs.get('val_accuracy')>0.95):
+      print("\n akurasi telah mencapai >95%!")
+      self.model.stop_training = True
+callbacks = myCallback()
