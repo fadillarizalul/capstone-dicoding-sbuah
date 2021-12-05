@@ -151,3 +151,70 @@ plt.ylabel('Loss')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'val'], loc='upper right')
 plt.show()
+
+#predict image
+import numpy as np
+from google.colab import files
+from keras.preprocessing import image
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+%matplotlib inline
+
+uploaded = files.upload()
+image_name = []
+image_conf = []
+predict_result = []
+
+for fn in uploaded.keys():
+  path = fn
+  img = image.load_img(path, color_mode="rgb", target_size=(150, 150), interpolation="nearest")
+  # imgplot = plt.imshow(img)
+  img = image.img_to_array(img)
+  img = np.expand_dims(img, axis=0)
+  img = img/255
+
+  images = np.vstack([img])
+  classes = model.predict(images, batch_size=10)
+
+  max = np.amax(classes[0])
+  if np.where(classes[0] == max)[0] == 0:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('Fresh Banana')
+  elif np.where(classes[0] == max)[0] == 1:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('Fresh Mango')
+  elif np.where(classes[0] == max)[0] == 2:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('Fresh Orange')
+  elif np.where(classes[0] == max)[0] == 3:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('Rotten Banana')
+  elif np.where(classes[0] == max)[0] == 4:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('Rotten Mango')
+  elif np.where(classes[0] == max)[0] == 5:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('Rotten orange')
+  else:
+    image_name.append(fn)
+    image_conf.append(max)
+    predict_result.append('undefined')
+
+plt.figure(figsize=(15, 15))
+for n in range(len(image_name)):
+  plt.subplot((len(image_name)/4)+1, 4, n+1)
+  plt.subplots_adjust(hspace = 0.3)
+  plt.imshow(image.load_img(image_name[n], color_mode="rgb", target_size=(150, 150), interpolation="nearest"))
+  title = f"predict: {predict_result[n]} ({round(float(image_conf[n])*100, 2)}%)"
+  plt.title(title, color='black')
+  plt.axis('off')
+plt.show()
+
+for fn in image_name:
+  os.system(f'rm {fn}')
