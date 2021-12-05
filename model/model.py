@@ -122,3 +122,14 @@ class myCallback(tf.keras.callbacks.Callback):
       print("\n akurasi telah mencapai >95%!")
       self.model.stop_training = True
 callbacks = myCallback()
+
+# latih model dengan model.fit 
+history = model.fit(
+      train_generator,
+      steps_per_epoch=12,  # berapa batch yang akan dieksekusi pada setiap epoch
+      epochs= 100, # tambahkan eposchs jika akurasi model belum optimal
+      validation_data=validation_generator, # menampilkan akurasi pengujian data validasi
+      validation_steps=5,  # berapa batch yang akan dieksekusi pada setiap epoch
+      verbose=2,
+      callbacks=[callbacks]
+      )
