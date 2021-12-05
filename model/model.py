@@ -133,3 +133,21 @@ history = model.fit(
       verbose=2,
       callbacks=[callbacks]
       )
+
+# Create plot Accuracy
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'val'], loc='upper right')
+plt.show()
+
+# Create plot Loss
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('Loss Plot')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'val'], loc='upper right')
+plt.show()
