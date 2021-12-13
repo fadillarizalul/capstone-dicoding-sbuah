@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sBuah Web App</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .navbar {
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        width: 100%;
+        background-color: rgba(63, 175, 141, 0.76);
+        color: #fff;
+    }
+
+    header {
+        padding: 25px;
+    }
+
+    #header-name {
+        font-size: 1em;
+        text-align: center;
+    }
+    
+
+</style>
+<body>
+    <nav class="navbar">
+        <h2>sBuah Web App</h2>
+    </nav>
+    <header>
+        <div id="header-name">
+            <h1> Fruit Quality Classification </h1>
+        </div>
+    </header>
+    <form action='/', method="post" enctype="multipart/form-data">
+        <input type="file" name="imagefile">
+        <input type="submit" value="Predict Image">
+    </form>
+</body>
+</html>
