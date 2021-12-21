@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sbuah Web App</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">      
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+		body {
+			font-family: 'Quicksand',sans-serif;
+		}
+		
+		header {
+		display: inline;
+		}
+		
+		nav {
+		width: 100%;
+		margin: auto;
+		display: flex;
+		line-height: 60px;
+		position: sticky;
+		position: -webkit-sticky; 
+		top: 0;
+		background: black ;
+		z-index: 1;
+		}
+		
+		.wrapper {
+		width: 1100px;
+		margin: auto;
+		position: relative;
+		}
+		
+		.logo {
+		font-size: 40px;
+		font-weight: 800;
+		float: left;
+		font-family: 'Quicksand',sans-serif;
+		color: white
+		}
+	
+		.menu {
+		float: right;
+		}
+		
+		nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		}
+
+		nav ul li {
+		float: left;
+		}
+
+		nav ul li a {
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			padding: 0px 16px 0px 16px;
+			text-decoration: none;
+		}
+
+		nav ul li a:hover {
+		text-decoration: underline;
+
+		}
+		a.tbl-abu {
+			background: grey;
+			border-radius: 20px;
+			margin-top: 20px;
+			padding: 15px 20px 15px 20px;
+			color: #FFFFFF;
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		a.tbl-abu:hover {
+			background: rgb(57, 57, 207);
+			text-decoration: none;
+		}
+
+		.containerr {
+			display: flex;
+			/* Properti lainnya */
+			width: 100%;
+			background-color:none;
+			padding: 20px;
+			margin: 0 auto;
+		}
+
+		.box {
+			flex-grow: 1;
+			/* properti lainnya */
+			background-color: none;
+			margin: 5px;
+			border: none;
+			object-position: center;
+		}
+		
+		footer {
+			position: relative;
+			width: 100%;
+			bottom: 0;
+			padding: 20px;
+			font-size: 20px;
+			color: white;
+			background-color: black;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		.foot{
+			text-align: center;
+		}
+
+			</style>
+</head>
+<body>
+        <header>
+            <nav>
+                <div class="wrapper">
+                    <div class="logo"><a color:white >Sbuah APP</a></div>
+                    <div class="menu">
+                        <ul>
+							<li><a href="#pengenalan">Beranda</a></li>
+							<li><a href="#kontak">Kontak Kami</a></li>
+                            <li><a href="#content" class="tbl-abu">Mari Coba!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+		<article id="pengenalan">
+			<div class="containerr">
+				<div class="box">
+					<img src="{{url_for('static', filename='top_img.png')}}" style="width: 100%;"/>
+				</div>
+				<div class="box">
+					<br>
+					<br>
+					<h2 style="font-size: 70px; font-weight: 2000; color: rgb(0, 105, 243);">SBuah <br>Fruit Classifier</h2>
+					<br>
+					<p style="text-align: justify; font-size: 20px;">Sbuah adalah aplikasi yang dapat dipakai
+					untuk mengklasifikasikan jenis sampah makanan khususnya sampah buah, Sbuah dapat memprediksi
+				    gambar yang di upload termasuk Buah yang layak dikonsumsi atau Tidak</p>
+					<br>
+					<br>
+					<div >
+						<p style="text-align: center; font-size: 20px;" href="#content">
+							<a href="#content" class="tbl-abu">Mari Coba!</a></p>
+					</div>
+					</div>
+				</div>                        
+			</div>
+		</article>
+    <div class="container">
+        <div id="content" style="margin-top:2em">{% block content %}{% endblock %}</div>
+    </div>
+	<br>
+	<br>
+	<div style="text-align: center; align-items: center;">
+		<h1 id="kontak" style="font-size: 60px;"> KONTAK KAMI </h1> 
+		<br>
+		<h3> Kirim email ke <br><a href = "mailto:nugrohorizkyadhi@gmail.com">Sini</a> Atau <a href = "mailto:nugrohorizkyadhi@gmail.com">Sini</a> </h3>
+		<br><br><br>
+		<h2>Made By CSD-069 Team</h2>
+		<h3>The Full Code of This Project Can be Found in 
+			<a href="https://github.com/fadillarizalul/capstone-dicoding-sbuah">Here</a> 
+		</h3>
+		<h3></h2>
+
+	</div>
+</body>
+
+<footer>
+	<p class="foot">Capstone Project SIB Dicoding &#169; 2021, Kampus Merdeka </p>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
+</footer>
+
+</html>
