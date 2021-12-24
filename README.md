@@ -1,4 +1,7 @@
-# capstone-dicoding-sbuah
+# capstone-dicoding-sbuah  
+<p align="center">
+  <img width="400" src="https://user-images.githubusercontent.com/76253393/147313139-bfc1fbc7-0cbe-4082-ab00-31c245b3a5ed.PNG" alt="sBuah Web-app logo">
+</p> 
 sBuah is a website application to classify an image of fruit. With this application, user can detect whether the fruit is Fresh or Rotten. By using Machine Learning algorithm, the model results an accuracy of about more than 97%. Model then deployed using Flask on Heroku App. The aim of this project is to reduce fruit waste and largerly food waste that contributes to Climate Change, especially in Indonesia.
 
 ## Getting Started  
@@ -67,12 +70,15 @@ Click on `Mari Coba` then `Upload Image` and choose an image from your lcoal to 
 Once uploaded, the web-app shall perform result and the output will be displayed.  
 
 ## Tools and Stacks  
-* Python
-* TensorFlow
-* Flask
-* Heroku
+<p align="left">
+  <img width="400" src="https://user-images.githubusercontent.com/76253393/147313507-016c0623-b512-4979-9bd8-61d6ca5f61ce.PNG">
+</p>
 
 ## References  
 * https://www.tensorflow.org/tutorials/images/classification
 * https://docs.streamlit.io/en/stable/
 * https://devcenter.heroku.com/
+
+## Project Member
+* **Rizky Adhi Nugroho**  - [RizkyAdhiNugroho](https://github.com/RizkyAdhiNugroho)
+* **Fadilla Rizalul Yahya**  - [fadillarizalul](https://github.com/fadillarizalul)
