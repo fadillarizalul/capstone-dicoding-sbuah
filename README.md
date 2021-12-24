@@ -67,7 +67,7 @@ It also deployed onlinely on Heroku, via this [Link](https://sbuah-web-app.herok
 After that, the webpage should open in the browser automatically.   
 
 Click on `Mari Coba` then `Upload Image` and choose an image from your lcoal to upload.  
-Once uploaded, the web-app shall perform result and the output will be displayed.  
+Once uploaded, click `Predict`, then the web-app shall perform result and the output will be displayed.  
 
 ## Tools and Stacks  
 <p align="left">
