@@ -1,5 +1,5 @@
 # capstone-dicoding-sbuah
-sBuah is a website application to classify an image of fruit. With this application, user can detect whether the fruit is Fresh or Rotten. By using Machine Learning algorithm, the model results an accuracy of about 97%. Model then deployed using Flask on Heroku App. The aim of this project is to reduce fruit waste and largerly food waste that contributes to Climate Change, especially in Indonesia.
+sBuah is a website application to classify an image of fruit. With this application, user can detect whether the fruit is Fresh or Rotten. By using Machine Learning algorithm, the model results an accuracy of about more than 97%. Model then deployed using Flask on Heroku App. The aim of this project is to reduce fruit waste and largerly food waste that contributes to Climate Change, especially in Indonesia.
 
 ## Getting Started  
 
