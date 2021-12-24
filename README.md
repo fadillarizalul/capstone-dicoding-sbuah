@@ -59,8 +59,8 @@ zipp==3.6.0
 This project can be run locally, by use the following command :-  
 `python app.py`  
 If it doesn't, the local URL would be output in the terminal, just copy it and open it in the browser manually.  
-By default, it would be `http://127.0.0.1:5000/` 
-It also deployed onlinely on Heroku, with this [Link](https://sbuah-web-app.herokuapp.com/)  
+By default, it would be `http://127.0.0.1:5000/`.  
+It also deployed onlinely on Heroku, via this [Link](https://sbuah-web-app.herokuapp.com/)  
 After that, the webpage should open in the browser automatically.   
 
 Click on `Mari Coba` then `Upload Image` and choose an image from your lcoal to upload.  
